@@ -1,0 +1,152 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2eecb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    /* Corrected empty margin */
+}
+
+.container {
+    width: 1000px;
+    perspective: 1000px;
+}
+
+.book {
+    width: 70%;
+    height: 85vh;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+}
+
+.page {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: white;
+    transform-origin: center;
+    transition: transform 1s;
+    top: 0;
+    left: 0;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.page:hover {
+    box-shadow: 0px 5px 15px rgba(175, 241, 8, 0.3);
+    border-radius: 100px;
+}
+
+.page:nth-child(even) {
+    transform: rotateY(0deg);
+}
+
+.page:nth-child(odd) {
+    transform: rotateY(-180deg);
+}
+
+.page p {
+    padding: 0;
+    /* Corrected empty padding */
+}
+
+.page-content {
+    padding: 50px;
+}
+
+.button-container {
+    position: absolute;
+    bottom: 45px;
+    width: 120vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #008CBA;
+    color: white;
+    margin: 0;
+    /* Corrected empty margin */
+    border: none;
+}
+
+button:hover {
+    box-shadow: 0px 5px 15px rgba(175, 241, 8, 0.3);
+    border-radius: 100px;
+}
+
+
+/* Phone specific CSS */
+
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        height: 100vh;
+    }
+    .book {
+        height: 70vh;
+    }
+    .page-content {
+        padding: 20px;
+    }
+    .button-container {
+        width: 100%;
+        bottom: 20px;
+    }
+    button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+.home {
+    top: 0%;
+    background-color: #f0f0f0;
+    padding: 10px;
+    text-align: center;
+    margin: 10px 0;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+}
+
+.home a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.home a:hover {
+    color: #007BFF;
+    box-shadow: 0px 5px 15px rgba(175, 241, 8, 0.3);
+    border-radius: 100px;
+}
+
+video {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border: 2px solid #333;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: block;
+    margin: 120px auto;
+}
+
+.controls {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.controls button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+}
